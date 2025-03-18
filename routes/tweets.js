@@ -22,6 +22,7 @@ router.post("/post/:token", (req, res) => {
       hashtag: hash,
       likes: [],
     });
+    console.log(newTweet)
     newTweet.save().then((tweet) => {
       // si il ya a un hashtag
       User.updateOne(
@@ -58,7 +59,6 @@ router.post("/post/:token", (req, res) => {
   });
 });
 
-// A REVOIIIIIR rrrrr rrr
 // route poster commentaire, meme principe que tweet 
 router.post("/comment", (req, res) => {
   if (!req.body.message) {
